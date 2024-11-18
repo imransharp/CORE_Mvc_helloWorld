@@ -1,0 +1,18 @@
+﻿<h2>Contacts List</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var contact in Model)
+    {
+        <tr>
+            <td>@contact.Name</td>
+            <td>@contact.Email</td>
+            <td>
+                <a href="/Contact/Delete/@contact.Id" onclick="return confirm('Are you sure you want to delete this contact?');">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Contact/Add">Add Contact</a>

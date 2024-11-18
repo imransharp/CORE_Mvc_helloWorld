@@ -18,6 +18,31 @@ namespace helloWorldMvcCore.Controllers
             return View();
         }
 
+        // Returns JSON
+        public IActionResult GetData()
+        {
+            var data = new { Id = 1, Name = "Imran" };
+            return Json(data);
+        }
+
+        // Redirects to another action
+        public IActionResult RedirectToAbout()
+        {
+            return RedirectToAction("About");
+        }
+
+        // Returns plain content
+        public IActionResult HelloWorld()
+        {
+            return Content("Hello, Imran!");
+        }
+
+        public IActionResult Contact()
+        {
+            ViewBag.contact = "imran bhatti";
+            return View();
+        }
+
         public IActionResult MessageView()
         {
             return View();
